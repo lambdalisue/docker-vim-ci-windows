@@ -23,6 +23,9 @@ COPY ./assets/install_vim.ps1 .
 RUN ./install_vim.ps1 ${env:VERSION} ${env:ARCH}; `
     Remove-Item install_vim.ps1
 
+# Restore SHELL
+SHELL ["cmd"]
+
 VOLUME C:\volume
 WORKDIR C:\volume
 ENTRYPOINT ["vim"]

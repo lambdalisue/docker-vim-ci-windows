@@ -46,3 +46,8 @@ pull: ## Pull a docker image
 push: ## Push a docker image
 	@echo "${GREEN}Pushing a docker image (${IMAGE}:${TAG})${RESET}"
 	@docker push ${IMAGE}:${TAG}
+
+.PHONY: shell
+shell: ## Enter a docker image
+	@echo "${GREEN}Entering a docker image (${IMAGE}:${TAG})${RESET}"
+	@docker run --rm --entrypoint cmd -it ${IMAGE}:${TAG}
