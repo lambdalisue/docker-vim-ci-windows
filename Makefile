@@ -51,3 +51,15 @@ push: ## Push a docker image
 shell: ## Enter a docker image
 	@echo "${GREEN}Entering a docker image (${IMAGE}:${TAG})${RESET}"
 	@docker run --rm --entrypoint cmd -it ${IMAGE}:${TAG}
+
+.PHONY: all
+all: ## All
+	@make VERSION=8.0.0003 image push
+	@make VERSION=8.0.0027 image push
+	@make VERSION=8.0.0104 image push
+	@make VERSION=8.0.0106 image push
+	@make VERSION=8.0.1383 image push
+	@make VERSION=8.1.0001 image push
+	@make VERSION=8.1.0342 image push
+	@make VERSION=8.1.0348 image push
+	@make VERSION=8.1.0369 image push
